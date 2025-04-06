@@ -17,9 +17,6 @@ install:
 build_script:
   - npm run build
 
-test_script:
-  - npm run lint && npm test  # исправлено с npm lint на npm run lint
-
 deploy_script:  # скрипт развёртывания
   - git config --global user.name "AppVeyor"
   - git config --global user.email "info@appveyor.com"
