@@ -1,23 +1,22 @@
-image: Ubuntu2204  # образ для сборки
+image: Ubuntu2204  # Use Ubuntu 22.04 as the build environment
 
-stack: node 20  # окружение
+stack: node 20  # Node.js 20 environment
 
 branches:
   only:
-    - master  # ветка git
-    - video  # ветка git
+    - master
+    - video
     - main
 
-cache: node_modules  # кеширование
+cache: node_modules  # Cache the node_modules directory for faster builds
 
 install:
-  - npm install  # команда установки зависимостей
+  - npm install  # Install project dependencies
 
-# Удалите строку build: off, если используете build_script
 build_script:
-  - npm run build
+  - npm run build  # Run your build command (ensure this exists in package.json)
 
-deploy_script:  # скрипт развёртывания
+deploy_script:  # Deployment to gh-pages
   - git config --global user.name "AppVeyor"
   - git config --global user.email "info@appveyor.com"
   - npm install push-dir --save-dev
