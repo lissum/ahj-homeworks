@@ -4,7 +4,7 @@ stack: node 20  # окружение
 
 branches:
   only:
-    - video  # ветка git, при форке попала эта ветка
+    - master  # ветка git
     - main
 
 cache: node_modules  # кеширование
@@ -12,13 +12,12 @@ cache: node_modules  # кеширование
 install:
   - npm install  # команда установки зависимостей
 
-build: off  # отключаем встроенную в appveyor систему сборки
-
+# Удалите строку build: off, если используете build_script
 build_script:
   - npm run build
 
 test_script:
-  - npm lint && npm test  # скрипт тестирования
+  - npm run lint && npm test  # исправлено с npm lint на npm run lint
 
 deploy_script:  # скрипт развёртывания
   - git config --global user.name "AppVeyor"
