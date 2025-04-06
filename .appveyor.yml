@@ -8,7 +8,7 @@ branches:
 cache: node_modules
 
 install:
-  - cd dom  # Укажи нужную подпапку, например, "events" или другую
+  - cd dom
   - npm install
 
 build_script:
