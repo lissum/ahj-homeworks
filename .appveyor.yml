@@ -12,7 +12,6 @@ install:
   - npm install
 
 build_script:
-  - cd dom  # Снова переходим в ту же подпапку
   - npm run build
 
 deploy_script:
