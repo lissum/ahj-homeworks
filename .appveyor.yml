@@ -12,7 +12,6 @@ install:
   - npm install
 
 build_script:
-  - cd dom  # Добавляем cd, чтобы npm run build выполнялся в правильной папке
   - npm run build
 
 deploy_script:
