@@ -13,8 +13,7 @@ cache: node_modules  # Cache the node_modules directory for faster builds
 install:
   - npm install  # Install project dependencies
 
-build_script:
-  - npm run build  # Run your build command (ensure this exists in package.json)
+build: off  # отключаем встроенную в appveyor систему сборки
 
 deploy_script:  # Deployment to gh-pages
   - git config --global user.name "AppVeyor"
