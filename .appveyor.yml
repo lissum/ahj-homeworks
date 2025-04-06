@@ -15,7 +15,6 @@ build_script:
   - npm run build
 
 deploy_script:
-  - cd events
   - git config --global user.name "AppVeyor"
   - git config --global user.email "info@appveyor.com"
   - npm install push-dir --save-dev
