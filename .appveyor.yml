@@ -12,11 +12,13 @@ install:
   - npm install
 
 build_script:
+  - cd dom  # Добавляем cd, чтобы npm run build выполнялся в правильной папке
   - npm run build
 
 deploy_script:
+  - cd dom  # Убеждаемся, что мы в папке dom перед деплоем
   - git config --global credential.helper store
   - git config --global user.name AppVeyor
   - git config --global user.email ci@appveyor.com
   - echo "https://$GITHUB_TOKEN:x-oauth-basic@github.com" > "$HOME/.git-credentials"
-  - npx gh-pages -d dist -u "appveyor-bot <ci@appveyor>"
+  - npx gh-pages -d dist -u "appveyor-bot <ci@appveyor>" -b gh-pages -r https://github.com/lissum/ahj-homeworks.git -t dom
