@@ -1,29 +1,22 @@
-image: Ubuntu2204  # образ для сборки
-
-stack: node 20  # окружение
+image: Ubuntu2204
+stack: node 20
 
 branches:
   only:
-    - master  # ветка git
     - video
-    - main
 
-cache: node_modules  # кеширование
+cache: node_modules
 
 install:
-  - yarn  # команда установки зависимостей
-
-build: off  # отключаем встроенную в appveyor систему сборки
+  - cd dom
+  - npm install
 
 build_script:
-  - yarn build   # команда сборки
+  - npm run build
 
-test_script:
-  - yarn lint && yarn test  # скрипт тестирования
-
-deploy_script:  # скрипт развёртывания
+deploy_script:
   - git config --global credential.helper store
   - git config --global user.name AppVeyor
   - git config --global user.email ci@appveyor.com
   - echo "https://$GITHUB_TOKEN:x-oauth-basic@github.com" > "$HOME/.git-credentials"
-  - npx gh-pages -d dist -u "appveyor-bot <ci@appveyor>"
+  - npx gh-pages -d dist -u "appveyor-bot <ci@appveyor>" -b gh-pages -r https://github.com/lissum/ahj-homeworks.git --dest dom
