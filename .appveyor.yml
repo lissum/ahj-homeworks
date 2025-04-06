@@ -16,7 +16,6 @@ build_script:
   - npm run build
 
 deploy_script:
-  - cd dom  # Убеждаемся, что мы в папке dom перед деплоем
   - git config --global credential.helper store
   - git config --global user.name AppVeyor
   - git config --global user.email ci@appveyor.com
