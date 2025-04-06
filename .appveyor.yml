@@ -1,0 +1,22 @@
+image: Ubuntu2204
+stack: node 20
+
+branches:
+  only:
+    - video
+
+cache: node_modules
+
+install:
+  - cd dom
+  - npm install
+
+build_script:
+  - npm run build
+
+deploy_script:
+  - git config --global credential.helper store
+  - git config --global user.name AppVeyor
+  - git config --global user.email ci@appveyor.com
+  - echo "https://$GITHUB_TOKEN:x-oauth-basic@github.com" > "$HOME/.git-credentials"
+  - npx gh-pages -d dist -u "appveyor-bot <ci@appveyor>"
