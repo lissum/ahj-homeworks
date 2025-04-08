@@ -1,0 +1,161 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.6;
+  color: #333;
+  background-color: #f8f9fa;
+  padding: 20px;
+}
+
+.container {
+  max-width: 600px;
+  margin: 0 auto;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #2c3e50;
+}
+
+.card-validator {
+  margin-bottom: 20px;
+}
+
+.card-form {
+  margin-bottom: 15px;
+}
+
+.d-flex {
+  display: flex;
+  gap: 16px;
+}
+
+.card-button {
+  padding: 8px 16px;
+  background: green;
+  outline: none;
+  color: #fff;
+  border: 0;
+  border-radius: 4px;
+}
+
+label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 600;
+}
+
+input#card-number {
+  width: 100%;
+  padding: 12px 15px;
+  font-size: 18px;
+  border: 2px solid #ddd;
+  border-radius: 4px;
+  transition: border-color 0.3s;
+  letter-spacing: 1px;
+}
+
+input#card-number:focus {
+  outline: none;
+  border-color: #3498db;
+}
+
+.valid input#card-number {
+  border-color: #2ecc71;
+  background-color: rgba(46, 204, 113, 0.05);
+}
+
+.invalid input#card-number {
+  border-color: #e74c3c;
+  background-color: rgba(231, 76, 60, 0.05);
+}
+
+.validation-indicator {
+  margin-top: 8px;
+  height: 20px;
+}
+
+.valid-indicator, .invalid-indicator {
+  display: none;
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.valid .validation-indicator .valid-indicator {
+  display: inline-block;
+  color: #2ecc71;
+}
+
+.invalid ~ .validation-indicator .invalid-indicator {
+  display: inline-block;
+  color: #e74c3c;
+}
+
+.card-icons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 15px;
+}
+
+.card-icon {
+  width: 60px;
+  height: 40px;
+  object-fit: contain;
+  opacity: 0.3;
+  transition: opacity 0.3s;
+  filter: grayscale(100%);
+}
+
+.card-icon.active {
+  opacity: 1;
+  filter: none;
+}
+
+.info {
+  margin-top: 30px;
+  padding-top: 20px;
+  border-top: 1px solid #eee;
+}
+
+.info p {
+  margin-bottom: 10px;
+}
+
+.info ul {
+  margin-left: 20px;
+}
+
+.info a {
+  color: #3498db;
+  text-decoration: none;
+}
+
+.info a:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding: 15px;
+  }
+
+  input#card-number {
+    font-size: 16px;
+  }
+
+  .card-icon {
+    width: 50px;
+    height: 35px;
+  }
+}
