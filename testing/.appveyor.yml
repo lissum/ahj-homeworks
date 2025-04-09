@@ -8,7 +8,7 @@ branches:
 cache: node_modules
 
 install:
-  - cd dom
+  - cd testing
   - npm install
 
 build_script:
@@ -19,4 +19,4 @@ deploy_script:
   - git config --global user.name AppVeyor
   - git config --global user.email ci@appveyor.com
   - echo "https://$GITHUB_TOKEN:x-oauth-basic@github.com" > "$HOME/.git-credentials"
-  - npx gh-pages -d dist -u "appveyor-bot <ci@appveyor>" -b gh-pages -r https://github.com/lissum/ahj-homeworks.git --dest dom
+  - npx gh-pages -d dist -u "appveyor-bot <ci@appveyor>" -b gh-pages -r https://github.com/lissum/ahj-homeworks.git --dest testing
