@@ -12,6 +12,7 @@ cache: node_modules  # кеширование
 
 install:
   - yarn  # команда установки зависимостей
+  - yarn add gh-pages
 
 build: off  # отключаем встроенную в appveyor систему сборки
 
