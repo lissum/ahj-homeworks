@@ -9,14 +9,14 @@ cache: node_modules
 
 install:
   - cd forms
-  - npm install
+  - yarn  # команда установки зависимостей
 
 build_script:
-  - npm run build
+  - yarn build   # команда сборки
 
 deploy_script:
   - git config --global credential.helper store
   - git config --global user.name AppVeyor
   - git config --global user.email ci@appveyor.com
   - echo "https://$GITHUB_TOKEN:x-oauth-basic@github.com" > "$HOME/.git-credentials"
-  - npx gh-pages -d dist -u "appveyor-bot <ci@appveyor>" -b gh-pages -r https://github.com/lissum/ahj-homeworks.git --dest forms
+  - yarn gh-pages -d dist -u "appveyor-bot <ci@appveyor>" -b gh-pages -r https://github.com/lissum/ahj-homeworks.git --dest dnd

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Trello-подобная доска задач</title>
+</head>
+<body>
+<div class="board">
+  <div class="column" data-column-id="todo">
+    <h2>TODO</h2>
+    <div class="card-list" data-column="todo"></div>
+    <button class="add-card-btn">+ Add another card</button>
+    <div class="add-card-form" style="display: none;">
+      <textarea placeholder="Enter a title for this card..."></textarea>
+      <div class="form-actions">
+        <button class="submit-card-btn">Add Card</button>
+        <button class="cancel-card-btn">✕</button>
+      </div>
+    </div>
+  </div>
+  <div class="column" data-column-id="in-progress">
+    <h2>IN PROGRESS</h2>
+    <div class="card-list" data-column="in-progress"></div>
+    <button class="add-card-btn">+ Add another card</button>
+    <div class="add-card-form" style="display: none;">
+      <textarea placeholder="Enter a title for this card..."></textarea>
+      <div class="form-actions">
+        <button class="submit-card-btn">Add Card</button>
+        <button class="cancel-card-btn">✕</button>
+      </div>
+    </div>
+  </div>
+  <div class="column" data-column-id="done">
+    <h2>DONE</h2>
+    <div class="card-list" data-column="done"></div>
+    <button class="add-card-btn">+ Add another card</button>
+    <div class="add-card-form" style="display: none;">
+      <textarea placeholder="Enter a title for this card..."></textarea>
+      <div class="form-actions">
+        <button class="submit-card-btn">Add Card</button>
+        <button class="cancel-card-btn">✕</button>
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+</html>
