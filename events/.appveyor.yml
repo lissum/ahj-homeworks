@@ -27,4 +27,4 @@ deploy_script:  # скрипт развёртывания
   - git config --global user.name AppVeyor
   - git config --global user.email ci@appveyor.com
   - echo "https://$GITHUB_TOKEN:x-oauth-basic@github.com" > "$HOME/.git-credentials"
-  - yarn gh-pages -d dist -u "appveyor-bot <ci@appveyor>" -b gh-pages -r https://github.com/lissum/ahj-homeworks.git --dest dom
+  - npx gh-pages -d dist -u "appveyor-bot <ci@appveyor>" -b gh-pages -r https://github.com/lissum/ahj-homeworks.git --dest dom
