@@ -8,7 +8,7 @@ branches:
 cache: node_modules
 
 install:
-  - cd forms
+  - cd dnd
   - yarn  # команда установки зависимостей
 
 build_script:
