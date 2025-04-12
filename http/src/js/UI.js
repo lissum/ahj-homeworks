@@ -1,4 +1,4 @@
-import { Api } from "./api.js";
+import Api from "./Api.js";
 import { renderTickets, showModal, hideModal } from "./components.js";
 
 export default class UI {

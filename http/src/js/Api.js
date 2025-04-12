@@ -1,4 +1,4 @@
-export class Api {
+export default class Api {
   constructor(baseUrl) {
     this.baseUrl = baseUrl || "http://localhost:7070";
   }
