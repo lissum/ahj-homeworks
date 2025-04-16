@@ -64,7 +64,7 @@ export default class Game {
     this.nextMoveTimeout = setTimeout(() => {
       // Remove goblin from current cell if it's still there
       if (this.board.getCell(newPosition).contains(this.goblin.getElement())) {
-        this.board.getCell(newPosition).removeChild(this.goblin.getElement());
+        this.goblin.getElement().remove();
         this.missedCount += 1;
         this.updateScoreDisplay();
         this.checkGameOver();
@@ -84,7 +84,7 @@ export default class Game {
     // If clicked on the cell with goblin
     if (cellIndex === this.goblin.getPosition() &&
       cell.contains(this.goblin.getElement())) {
-      cell.removeChild(this.goblin.getElement());
+      this.goblin.getElement().remove();
       this.score += 1;
       this.updateScoreDisplay();
 
@@ -129,7 +129,7 @@ export default class Game {
     // Remove goblin if it's on the board
     const currentCell = this.board.getCell(this.goblin.getPosition());
     if (currentCell && currentCell.contains(this.goblin.getElement())) {
-      currentCell.removeChild(this.goblin.getElement());
+      this.goblin.getElement().remove();
     }
 
     // Clear any existing timeout
