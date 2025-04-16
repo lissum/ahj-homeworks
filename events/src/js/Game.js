@@ -53,7 +53,7 @@ export default class Game {
     } while (newPosition === this.goblin.getPosition());
 
     this.goblin.setPosition(newPosition);
-    this.board.getCell(newPosition).appendChild(this.goblin.getElement());
+    this.board.getCell(newPosition).append(this.goblin.getElement());
 
     // Clear any existing timeout
     if (this.nextMoveTimeout) {
